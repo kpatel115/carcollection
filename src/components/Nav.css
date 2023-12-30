@@ -1,0 +1,22 @@
+.nav{
+    background-color: black;
+    color:white;
+    display:flex;
+    justify-content: space-between;;
+    align-items: center;
+    padding: 0px 40px;
+}
+.nav ul{
+    display:flex;
+    justify-content: space-between;
+    gap:20px;
+    list-style-type: none;
+
+}
+.nav ul a{
+    color:white;
+    text-decoration: none;
+}
+.nav ul a:hover{
+    color:red;
+}

@@ -17,7 +17,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // MongoDB connection
-
+// using .env
 //const mongoURI = 'mongodb+srv://kpatel114:R7tvHnASCDmCJToZ@carcollection.chb2apw.mongodb.net/CarCollection?retryWrites=true&w=majority'
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });

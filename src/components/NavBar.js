@@ -54,7 +54,6 @@ const Nav = () => {
         <h1>Car Collection</h1>
         <ul>
            <li><a href='/about'>About</a></li> 
-           <li><a href='/dashbaord'>Dashboard</a></li>
            {
 
             !auth.currentUser ? 

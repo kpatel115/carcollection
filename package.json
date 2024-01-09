@@ -37,7 +37,9 @@
     "start": "concurently \"npm run server\" \"npm run client\"",
     "server":"node server.js",
     "client": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run build-client && npm run build-server",
+    "build-client": "npm run build",
+    "build-server": "echo 'Build server here'",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

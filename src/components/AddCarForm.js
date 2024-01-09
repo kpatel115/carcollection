@@ -1,7 +1,5 @@
 import React from 'react';
-import { Form, Input, Button, Select, Typography } from 'antd';
-
-const { Option } = Select;
+import { Form, Input, Button, Typography } from 'antd';
 
 const AddCarForm = ({ onSubmit }) => {
   const onFinish = (values) => {

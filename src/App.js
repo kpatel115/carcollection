@@ -3,9 +3,7 @@ import React from 'react';
 import NavBar from './components/NavBar';
 import { Provider } from 'react-redux';
 import { store } from './redux/store'
-import routes from '../src/config/routes';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import AuthChecker from './auth/AuthChecker';
 //import { Dashboard } from '@mui/icons-material'
 import Home from './pages/Home';
 import About from './pages/About';

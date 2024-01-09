@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
-import { Button } from 'antd';
-import firebase from '../auth/firebase'
 import { useNavigate} from 'react-router-dom'
 import { signInWithPopup, signOut, GoogleAuthProvider } from 'firebase/auth';
-import { auth, Providers } from '../auth/firebase';
+import { auth } from '../auth/firebase';
 
 const Nav = () => {
   const navigate = useNavigate();

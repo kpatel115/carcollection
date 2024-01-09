@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useNavigate} from 'react-router-dom'
-import { onAuthStateChanged, signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
+import { onAuthStateChanged, signInWithPopup} from 'firebase/auth'
 import { auth, Providers} from '../auth/firebase'
 
 const AuthChecker = ({ children }) => {

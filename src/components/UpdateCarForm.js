@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Input, Button, Select, Typography } from 'antd';
+import { Form, Input, Button, Typography } from 'antd';
 
-const { Option } = Select;
 
 const UpdateCarForm = ({ onSubmit, initialData, carId }) => {
 
@@ -12,7 +11,7 @@ const UpdateCarForm = ({ onSubmit, initialData, carId }) => {
     setFormData(initialData)
   },[initialData]);
 
-  const handleFormChange = (changedValues, allValues) => {
+  const handleFormChange = (allValues) => {
     setFormData(allValues);
   };
 

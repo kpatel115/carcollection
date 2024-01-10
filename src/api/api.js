@@ -1,7 +1,7 @@
 // Install axios using: npm install axios
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://lustrous-smakager-5e4bf2.netlify.app/api';
 
 export const server_calls = {
   get: async () => {

@@ -1,4 +1,5 @@
 // server.js
+
 exports.handler = async (event, context) => {
     // Your serverless function logic here
     return {

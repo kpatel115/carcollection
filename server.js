@@ -33,6 +33,7 @@ db.once('open', () => {
 
   // Define your routes and other server logic here
   app.use('/', router)
+  app.get('/dashboard', router)
 
   // get all the cars
 

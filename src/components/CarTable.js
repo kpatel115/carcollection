@@ -19,7 +19,7 @@ const CarTable = () => {
     useEffect(() => {
         const fetchCars = async () => {
             try {
-                const response = await fetch(`${apiUrl}/dashboard`);
+                const response = await fetch(`/dashboard`);
                 const data = await response.json();
                 setCars(data);
                 console.log('Fetched Cars', data)
@@ -34,7 +34,7 @@ const CarTable = () => {
     // Ability to Add A Car to DB From Dashboard with the Car Table
     const handleAddCar = async (newCar) => {
         try {
-            const response = await fetch(`${apiUrl}/dashboard`, {
+            const response = await fetch(`/dashboard`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ const CarTable = () => {
             if (!carId) {
                 console.error('Invalid carId:', carId);
             }
-            const response = await fetch(`${apiUrl}/dashboard/${carId}`, {
+            const response = await fetch(`/dashboard/${carId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -90,7 +90,7 @@ const CarTable = () => {
             if (!carId) {
                 console.error('Invalid carId:', carId);
             }
-            const response = await fetch(`${apiUrl}/dashboard/${carId}`, {
+            const response = await fetch(`/dashboard/${carId}`, {
                 method: 'DELETE',
             });
 

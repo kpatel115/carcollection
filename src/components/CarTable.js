@@ -37,7 +37,7 @@ const CarTable = () => {
     // Ability to Add A Car to DB From Dashboard with the Car Table
     const handleAddCar = async (newCar) => {
         try {
-            const response = await fetch('https://lustrous-smakager-5e4bf2.netlify.app/dashboard', {
+            const response = await fetch('https://lustrous-smakager-5e4bf2.netlify.app/.netlify.functions.server/dashboard', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ const CarTable = () => {
             if (!carId) {
                 console.error('Invalid carId:', carId);
             }
-            const response = await fetch(`https://lustrous-smakager-5e4bf2.netlify.app/dashboard/${carId}`, {
+            const response = await fetch(`https://lustrous-smakager-5e4bf2.netlify.app/.netlify.functions.server/dashboard/${carId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -93,7 +93,7 @@ const CarTable = () => {
             if (!carId) {
                 console.error('Invalid carId:', carId);
             }
-            const response = await fetch(`https://lustrous-smakager-5e4bf2.netlify.app/dashboard/${carId}`, {
+            const response = await fetch(`https://lustrous-smakager-5e4bf2.netlify.app/.netlify.functions.server/dashboard/${carId}`, {
                 method: 'DELETE',
             });
 

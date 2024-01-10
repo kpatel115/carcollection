@@ -19,7 +19,7 @@ const CarTable = () => {
     useEffect(() => {
         const fetchCars = async () => {
             try {
-                const response = await fetch('https://lustrous-smakager-5e4bf2.netlify.app/dashboard');
+                const response = await fetch('https://lustrous-smakager-5e4bf2.netlify.app/.netlify.functions.server/dashboard');
                 const data = await response.json();
                 setCars(data);
                 console.log('Fetched Cars', data)

@@ -114,10 +114,13 @@ const CarTable = () => {
             style={{
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center'
+                backgroundColor:'cornflowerblue',
+                color: 'white',
+                margin: '20px 0px',
+                padding: '5px',
             }}
         >
+            
             {/* ANT Design*/}
             <Title level={3}>All Cars at our plateform</Title>
             <Button onClick={() => setIsModalVisible(true)}>
@@ -147,8 +150,14 @@ const CarTable = () => {
 
 
             {/*Car Cards in a table - MUI Card */}
-
+            <div style={{
+                    backgroundColor: 'antiquewhite',
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(4, 1fr)',
+                    gap: '20px'
+                }}>
             <CarCard
+                
              cars={cars}
             //  onEdit={handleUpdateCar}
              onEdit={(car) => {
@@ -163,7 +172,7 @@ const CarTable = () => {
                 }
               }} 
             />
-
+        </div>
         </div>
     )
 };

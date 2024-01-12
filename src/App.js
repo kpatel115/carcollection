@@ -20,23 +20,6 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/about' element={<About />} />
-          {/* {routes.map((route, index) => (
-              <Route
-                key={index}
-                path={route.path}
-                element={
-                  route.protected ? ( 
-                  <AuthChecker>
-                    <route.component />
-                  </AuthChecker> 
-                  ) : (
-                  <route.component /> 
-                  ) 
-                }
-              />
-          ))
-          } */}
-
         </Routes>
       </Provider>
     </Router>

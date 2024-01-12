@@ -34,7 +34,7 @@
     "react-dom": "^17.0.0 || ^18.0.0"
   },
   "scripts": {
-    "start": "npm run server && npm run client",
+    "start": "concurrently \"npm run client\" \"npm run server\"",
     "server":"node server.js",
     "client": "react-scripts start",
     "build": "npm run build-client && npm run build-server",

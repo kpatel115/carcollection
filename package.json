@@ -39,7 +39,7 @@
     "client": "react-scripts start",
     "build": "npm install",
     "build-client": "react-scripts build",
-    "build-server":"node server.js" ,
+    "build-server":"echo 'building server'" ,
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

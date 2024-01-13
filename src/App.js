@@ -28,4 +28,3 @@ const App = () => {
 
 export default App;
 
-//"npm run build-client && npm run build-server",

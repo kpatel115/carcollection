@@ -3,7 +3,7 @@ import AddCarForm from '../components/AddCarForm';
 import UpdateCarForm from '../components/UpdateCarForm';
 import { Modal, Button, Typography } from 'antd'
 import CarCard from './CarCard';
-// const apiUrl = process.env.DEPLOY_API_URL2 || process.env.DEPLOY_API_URL2
+const apiUrl = process.env.DEPLOY_API_URL2;
 
 
 
@@ -19,7 +19,7 @@ const CarTable = () => {
     useEffect(() => {
         const fetchCars = async () => {
             try {
-                const response = await fetch('http://localhost:5000/dashboard');
+                const response = await fetch(`${apiUrl}/dashboard`);
                 const data = await response.json();
                 setCars(data);
                 console.log('Fetched Cars', data)

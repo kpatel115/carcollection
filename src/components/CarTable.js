@@ -19,7 +19,7 @@ const CarTable = () => {
     useEffect(() => {
         const fetchCars = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/dashboard`);
+                const response = await fetch(`https://carcollection1-0.onrender.com/dashboard`);
                 const data = await response.json();
                 setCars(data);
                 console.log('Fetched Cars', data)
@@ -35,7 +35,7 @@ const CarTable = () => {
     // Ability to Add A Car to DB From Dashboard with the Car Table
     const handleAddCar = async (newCar) => {
         try {
-            const response = await fetch('http://localhost:5000/dashboard', {
+            const response = await fetch('https://carcollection1-0.onrender.com/dashboard/dashboard', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ const CarTable = () => {
             if (!carId) {
                 console.error('Invalid carId:', carId);
             }
-            const response = await fetch(`'http://localhost:5000/dashboard/${carId}`, {
+            const response = await fetch(`https://carcollection1-0.onrender.com/dashboard/${carId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -91,7 +91,7 @@ const CarTable = () => {
             if (!carId) {
                 console.error('Invalid carId:', carId);
             }
-            const response = await fetch(`http://localhost:5000/dashboard/${carId}`, {
+            const response = await fetch(`https://carcollection1-0.onrender.com/dashboard/${carId}`, {
                 method: 'DELETE',
             });
 

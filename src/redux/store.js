@@ -3,7 +3,7 @@ import { reducer } from './slices/RootSlice'
 
 export const store =  configureStore({
   reducer,
-  devTools:true,
+  devTools:false,
 })
 
 export default store;

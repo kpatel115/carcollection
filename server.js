@@ -10,9 +10,9 @@ const mongoURI = process.env.MONGODB_URI;
 
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+//const PORT = process.env.PORT || 5000;
 
-// const PORT = 'https://lustrous-smakager-5e4bf2.netlify.app/.netlify.functions.server'
+ const PORT = 'https://carcollection1-0.onrender.com'
 //Middleware
 app.use(cors());
 app.use(bodyParser.json());
@@ -41,7 +41,7 @@ db.once('open', () => {
 
   // Start the server
   app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on https://carcollection1-0.onrender.com/dashboard`);
   });
 });
 

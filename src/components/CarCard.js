@@ -31,7 +31,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 const CarCard = ({ cars, onEdit, onDelete }) => {
     
-    console.log('Recieved Cars:', cars);
+
 
     const [expanded, setExpanded] = React.useState(false);
 

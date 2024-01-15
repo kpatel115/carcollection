@@ -3,12 +3,14 @@ import AddCarForm from '../components/AddCarForm';
 import UpdateCarForm from '../components/UpdateCarForm';
 import { Modal, Button, Typography } from 'antd'
 import CarCard from './CarCard';
-const apiUrl = process.env.DEPLOY_API_URL;
+
+const apiUrl = 'https://carcollectionbackend.onrender.com'
 
 
 
 const CarTable = () => {
 
+    console.log(`API URL: ${apiUrl}`)
 
     // MUI Card & Original CarTable Function
     const [cars, setCars] = useState([]);

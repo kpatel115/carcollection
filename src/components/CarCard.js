@@ -76,7 +76,7 @@ const CarCard = ({ cars, onEdit, onDelete }) => {
                     <CardMedia
                         component="img"
                         height="194"
-                        image={`/images/${car.pic}`}
+                        image={`../images/${car.pic}`}
                         alt={`${car.make} ${car.model}`}
                     />
                     <CardContent>

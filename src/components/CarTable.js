@@ -5,12 +5,12 @@ import { Modal, Button, Typography } from 'antd'
 import CarCard from './CarCard';
 
 const apiUrl = 'https://carcollectionbackend.onrender.com'
-
+const apiUrl2 = 'http://localhost:5000'
 
 
 const CarTable = () => {
 
-    console.log(`API URL: ${apiUrl}`)
+    console.log(`API URL: ${apiUrl2}`)
 
     // MUI Card & Original CarTable Function
     const [cars, setCars] = useState([]);
@@ -21,7 +21,7 @@ const CarTable = () => {
     useEffect(() => {
         const fetchCars = async () => {
             try {
-                const response = await fetch(`${apiUrl}/dashboard`);
+                const response = await fetch(`${apiUrl2}/dashboard`);
                 const data = await response.json();
                 setCars(data);
                 console.log('Fetched Cars', data)
@@ -37,7 +37,7 @@ const CarTable = () => {
     // Ability to Add A Car to DB From Dashboard with the Car Table
     const handleAddCar = async (newCar) => {
         try {
-            const response = await fetch(`${apiUrl}/dashboard`, {
+            const response = await fetch(`${apiUrl2}/dashboard`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ const CarTable = () => {
             if (!carId) {
                 console.error('Invalid carId:', carId);
             }
-            const response = await fetch(`${apiUrl}/dashboard/${carId}`, {
+            const response = await fetch(`${apiUrl2}/dashboard/${carId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -93,7 +93,7 @@ const CarTable = () => {
             if (!carId) {
                 console.error('Invalid carId:', carId);
             }
-            const response = await fetch(`${apiUrl}/dashboard/${carId}`, {
+            const response = await fetch(`${apiUrl2}/dashboard/${carId}`, {
                 method: 'DELETE',
             });
 
@@ -124,7 +124,7 @@ const CarTable = () => {
         >
             
             {/* ANT Design*/}
-            <Title level={3}>All Cars at our plateform</Title>
+            <Title level={3}>All Cars at our platform</Title>
             <Button onClick={() => setIsModalVisible(true)}>
                 {selectedCar ? 'Edit Car' : 'Add Car'}
             </Button>
@@ -152,13 +152,26 @@ const CarTable = () => {
 
 
             {/*Car Cards in a table - MUI Card */}
-            <div style={{
+            <div className='flex mb-4'>
+
+
+            <div className= 'flex mb-4' 
+                    style={{
                     backgroundColor: 'antiquewhite',
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(4, 1fr)',
-                    gap: '20px'
-                }}>
+                    gridTemplateColumns: 'repeat(2, 1fr)',
+                    gap: '20px'}}
+            >
+                {cars.map((car) => (
+
+  
             <CarCard
+                style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(2, 1fr)',
+                    gap: '20px'
+                }}
+                className='w-1/2 bg-gray-400 h-12'
                 
              cars={cars}
             //  onEdit={handleUpdateCar}
@@ -174,8 +187,10 @@ const CarTable = () => {
                 }
               }} 
             />
+        ))}
         </div>
-        </div>
+    </div>
+    </div>
     )
 };
 

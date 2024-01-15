@@ -42,7 +42,7 @@ const CarCard = ({ cars, onEdit, onDelete }) => {
         return <IconButton {...other} />;
     })(({ theme, expand }) => ({
         transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-        marginLeft: 'auto',
+
         transition: theme.transitions.create('transform', {
             duration: theme.transitions.duration.shortest,
         }),
@@ -56,12 +56,13 @@ const CarCard = ({ cars, onEdit, onDelete }) => {
 
     /* MUI CARD - Render a Car */
     return (
-        <div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 ">
+
             {cars.map((car, index) => (
                 <Card key={index} sx={{ maxWidth: 345, margin: '16px' }}>
                     <CardHeader
                         avatar={
-                            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                            <Avatar sx={{ bgcolor: red[500] }} aria-label="car">
 
                             </Avatar>
                         }
@@ -76,7 +77,7 @@ const CarCard = ({ cars, onEdit, onDelete }) => {
                     <CardMedia
                         component="img"
                         height="194"
-                        image={`../images/${car.pic}`}
+                        image={`${process.env.PUBLIC_URL}/images/${car.pic}`}
                         alt={`${car.make} ${car.model}`}
                     />
                     <CardContent>

@@ -48,14 +48,14 @@ const Nav = () => {
 
 
   return (
-    <div className='nav'>
-        <h1>Car Collection</h1>
-        <ul>
-           <li><a href='/about'>About</a></li> 
+    <div className='bg-slate-500 p-4'>
+        <h1 className="text-white font-bold text-xl">Car Collection</h1>
+        <ul className="hidden md:flex space-x-4">
+           <li className="text-white hover:text-gray-300" ><a href='/about'>About</a></li> 
            {
 
             !auth.currentUser ? 
-            <button>
+            <button className="text-white hover:text-gray-300">
               <div>
                 <Link to='/' onClick={handleLogin}>
                   Login
@@ -63,7 +63,7 @@ const Nav = () => {
               </div>
             </button>
             : 
-            <button>
+            <button className="text-white hover:text-gray-300">
               <div>
                 <Link to='/' onClick={handleLogout}>
                   Logout

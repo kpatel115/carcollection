@@ -1,12 +1,15 @@
-import Background from '../images/matt-hardy-6ArTTluciuA-unsplash.jpg'
 
 function Home() {
   return (
     <div 
-      style={ {backgroundImage: `url(${Background })`}} 
-      className='flex flex-row justify-center mx-auto bg-cover bg-fixed'>
-      <div className='flex place-items-center h-screen'>
-        <h3 className='p-5 bg-white bg-opacity-25 text-white rounded'>Enter the Cars!</h3>
+    className="min-h-screen bg-cover bg-center" style={{ backgroundImage: "url('/background.jpg')"}}>
+
+      <div className="flex items-center justify-center h-full text-white text-center">
+        <div className="my-8 ">
+          <h1 className="text-4xl font-bold mb-4">Enter the Cars!</h1>
+          <p className="text-lg mb-8">Explore and discover amazing cars!</p>
+        </div>
+
       </div>
     </div>
   )

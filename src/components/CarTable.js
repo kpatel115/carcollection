@@ -3,9 +3,12 @@ import AddCarForm from '../components/AddCarForm';
 import UpdateCarForm from '../components/UpdateCarForm';
 import { Modal, Button, Typography } from 'antd'
 import CarCard from './CarCard';
+import { styled } from '@mui/system';
+
 
 const apiUrl = 'https://carcollectionbackend.onrender.com'
 const apiUrl2 = 'http://localhost:5000'
+
 
 
 const CarTable = () => {
@@ -21,7 +24,7 @@ const CarTable = () => {
     useEffect(() => {
         const fetchCars = async () => {
             try {
-                const response = await fetch(`${apiUrl2}/dashboard`);
+                const response = await fetch(`${apiUrl}/dashboard`);
                 const data = await response.json();
                 setCars(data);
                 console.log('Fetched Cars', data)
@@ -37,7 +40,7 @@ const CarTable = () => {
     // Ability to Add A Car to DB From Dashboard with the Car Table
     const handleAddCar = async (newCar) => {
         try {
-            const response = await fetch(`${apiUrl2}/dashboard`, {
+            const response = await fetch(`${apiUrl}/dashboard`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -62,7 +65,7 @@ const CarTable = () => {
             if (!carId) {
                 console.error('Invalid carId:', carId);
             }
-            const response = await fetch(`${apiUrl2}/dashboard/${carId}`, {
+            const response = await fetch(`${apiUrl}/dashboard/${carId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -93,7 +96,7 @@ const CarTable = () => {
             if (!carId) {
                 console.error('Invalid carId:', carId);
             }
-            const response = await fetch(`${apiUrl2}/dashboard/${carId}`, {
+            const response = await fetch(`${apiUrl}/dashboard/${carId}`, {
                 method: 'DELETE',
             });
 
@@ -110,24 +113,18 @@ const CarTable = () => {
             console.error('Error deleting car: ', error);
         }
     };
+
     const { Title } = Typography;
     return (
-        <div
-            style={{
-                display: 'flex',
-                flexDirection: 'column',
-                backgroundColor:'cornflowerblue',
-                color: 'white',
-                margin: '20px 0px',
-                padding: '5px',
-            }}
-        >
-            
+        <div className="container">
+
             {/* ANT Design*/}
-            <Title level={3}>All Cars at our platform</Title>
-            <Button onClick={() => setIsModalVisible(true)}>
+            <Title className='flex justify-center items-center text-sky-50 my-9 ' level={3}>All Cars at our platform</Title>
+            <div className='flex justify-center items-center text-sky-50 text-center mx-9 my-9'>
+            <Button className='text-sky-50 text-center mx-9' onClick={() => setIsModalVisible(true)}>
                 {selectedCar ? 'Edit Car' : 'Add Car'}
             </Button>
+            </div>
             {/* Modal */}
             <Modal
                 title={selectedCar ? 'Edit Car' : 'Add Car'}
@@ -148,31 +145,11 @@ const CarTable = () => {
                 }
 
             </Modal>
-
-
-
+            <div  className="flex items-center justify-center">
             {/*Car Cards in a table - MUI Card */}
-            <div className='flex mb-4'>
-
-
-            <div className= 'flex mb-4' 
-                    style={{
-                    backgroundColor: 'antiquewhite',
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(2, 1fr)',
-                    gap: '20px'}}
-            >
-                {cars.map((car) => (
-
   
             <CarCard
-                style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(2, 1fr)',
-                    gap: '20px'
-                }}
-                className='w-1/2 bg-gray-400 h-12'
-                
+            className="max-w-md mx-auto"
              cars={cars}
             //  onEdit={handleUpdateCar}
              onEdit={(car) => {
@@ -187,11 +164,9 @@ const CarTable = () => {
                 }
               }} 
             />
-        ))}
-        </div>
-    </div>
-    </div>
-    )
-};
 
-export default CarTable
+        </div>
+        </div>
+    )
+            };
+export default CarTable;
